@@ -19,6 +19,20 @@ public class InterpretDrawingFile {
 		chooser.showOpenDialog(null);
 		File f = new File(chooser.getSelectedFile().getPath());
 		Scanner in = new Scanner(f); //making Scanner with a File
-		
+
+		String shapeType = in.next();
+		int redComponent = in.nextInt();
+		int greenComponent = in.nextInt();
+		int blueComponent = in.nextInt();
+		boolean isFilled = in.nextBoolean();
+		double x = in.nextDouble(); 
+		double y = in.nextDouble();
+		double halfWidth = in.nextDouble();
+		double halfHeigh = in.nextDouble(); 
+
+		StdDraw.setPenColor(redComponent, greenComponent, blueComponent);
+		StdDraw.filledRectangle(x, y, halfWidth, halfHeigh);
 	}
 }
+//purple outline ellipse 73 0 146 false 0.5 0.5 0.2 0.2
+//rectangle 0 0 0 false 0.5 0.5 0.2 0.2
